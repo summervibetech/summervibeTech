@@ -465,10 +465,10 @@ export default function SummervibeTechLanding() {
                 <div className="w-6 h-px" style={{ backgroundColor: colors.accent }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.accent }}>What We Build</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold" style={{ color: colors.ink }}>
+              <h2 className="text-3xl md:text-5xl font-bold whitespace-nowrap" style={{ color: colors.ink }}>
                 Services shaped to how you actually work.
               </h2>
-              <p className="mt-4 text-base md:text-lg" style={{ color: colors.inkSoft }}>
+              <p className="mt-4 text-base md:text-lg whitespace-nowrap" style={{ color: colors.inkSoft }}>
                 From a single landing page to a full custom app with AI built in — we scope to your goals, not a template.
               </p>
             </div>
@@ -537,15 +537,13 @@ export default function SummervibeTechLanding() {
                     className="p-5 rounded-xl transition-all hover:-translate-y-1"
                     style={{ backgroundColor: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.12)' }}
                   >
-                    <div className="flex items-center gap-2.5 mb-3">
-                      <div
-                        className="w-7 h-7 flex-shrink-0 rounded-md flex items-center justify-center text-xs font-bold"
-                        style={{ backgroundColor: colors.accent, color: colors.bg }}
-                      >
-                        {String(i + 1).padStart(2, '0')}
-                      </div>
-                      <h3 className="text-base font-bold leading-tight" style={{ color: colors.bg }}>{c.title}</h3>
+                    <div
+                      className="w-7 h-7 rounded-md flex items-center justify-center mb-3 text-xs font-bold"
+                      style={{ backgroundColor: colors.accent, color: colors.bg }}
+                    >
+                      {String(i + 1).padStart(2, '0')}
                     </div>
+                    <h3 className="text-base font-bold mb-1.5" style={{ color: colors.bg }}>{c.title}</h3>
                     <p className="text-sm" style={{ color: '#A8B2C2' }}>{c.desc}</p>
                   </div>
                 ))}
