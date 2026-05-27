@@ -822,10 +822,10 @@ export default function SummervibeTechLanding() {
               {process.map((p) => (
                 <div key={p.step} className="text-center">
                   <div
-                    className="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-5 relative z-10"
+                    className="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-5 relative z-10"
                     style={{ backgroundColor: colors.surface, border: `2px solid ${colors.accent}` }}
                   >
-                    <span className="text-xl font-bold" style={{ color: colors.accent }}>{p.step}</span>
+                    <span className="text-sm font-bold" style={{ color: colors.accent }}>{p.step}</span>
                   </div>
                   <h3 className="text-lg font-bold mb-2" style={{ color: colors.ink }}>{p.title}</h3>
                   <p className="text-sm" style={{ color: colors.inkSoft }}>{p.desc}</p>
