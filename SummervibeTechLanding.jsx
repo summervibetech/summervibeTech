@@ -894,7 +894,7 @@ export default function SummervibeTechLanding() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-bold" style={{ color: colors.bg }}>Message sent!</h3>
-                    <p className="text-sm" style={{ color: '#C5CDD8' }}>Your email client should have opened. We&apos;ll be in touch within one business day.</p>
+                    <p className="text-sm" style={{ color: '#C5CDD8' }}>We&apos;ll be in touch as soon as possible.</p>
                     <button
                       onClick={() => { setFormSent(false); setFormData({ name: '', email: '', service: '', message: '' }); }}
                       className="mt-2 text-sm font-semibold underline"
