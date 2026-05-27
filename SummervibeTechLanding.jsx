@@ -588,7 +588,7 @@ export default function SummervibeTechLanding() {
               <span className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.accent }}>Who We Help</span>
               <div className="w-6 h-px" style={{ backgroundColor: colors.accent }} />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold whitespace-nowrap" style={{ color: colors.ink }}>Premium quality, built for every budget.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold" style={{ color: colors.ink }}>Premium quality, built for every budget.</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
