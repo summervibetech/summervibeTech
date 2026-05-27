@@ -465,10 +465,10 @@ export default function SummervibeTechLanding() {
                 <div className="w-6 h-px" style={{ backgroundColor: colors.accent }} />
                 <span className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.accent }}>What We Build</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold whitespace-nowrap" style={{ color: colors.ink }}>
+              <h2 className="text-3xl md:text-5xl font-bold" style={{ color: colors.ink }}>
                 Services shaped to how you actually work.
               </h2>
-              <p className="mt-4 text-base md:text-lg whitespace-nowrap" style={{ color: colors.inkSoft }}>
+              <p className="mt-4 text-base md:text-lg" style={{ color: colors.inkSoft }}>
                 From a single landing page to a full custom app with AI built in — we scope to your goals, not a template.
               </p>
             </div>
@@ -481,10 +481,12 @@ export default function SummervibeTechLanding() {
                 className="group p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
                 style={{ backgroundColor: colors.surface, border: `1px solid ${colors.border}` }}
               >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ backgroundColor: colors.accentSoft + '60' }}>
-                  <Icon name={s.icon} className="w-6 h-6" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center" style={{ backgroundColor: colors.accentSoft + '60' }}>
+                    <Icon name={s.icon} className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold" style={{ color: colors.ink }}>{s.title}</h3>
                 </div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: colors.ink }}>{s.title}</h3>
                 <p className="text-sm" style={{ color: colors.inkSoft }}>{s.desc}</p>
               </div>
             ))}
@@ -537,14 +539,16 @@ export default function SummervibeTechLanding() {
                     className="p-5 rounded-xl transition-all hover:-translate-y-1"
                     style={{ backgroundColor: 'rgba(255, 255, 255, 0.06)', border: '1px solid rgba(255, 255, 255, 0.12)' }}
                   >
-                    <div
-                      className="w-7 h-7 rounded-md flex items-center justify-center mb-3 text-xs font-bold"
-                      style={{ backgroundColor: colors.accent, color: colors.bg }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
+                    <div className="flex sm:block items-center gap-2.5">
+                      <div
+                        className="w-7 h-7 flex-shrink-0 rounded-md flex items-center justify-center mb-0 sm:mb-3 text-xs font-bold"
+                        style={{ backgroundColor: colors.accent, color: colors.bg }}
+                      >
+                        {String(i + 1).padStart(2, '0')}
+                      </div>
+                      <h3 className="text-base font-bold mb-0 sm:mb-1.5" style={{ color: colors.bg }}>{c.title}</h3>
                     </div>
-                    <h3 className="text-base font-bold mb-1.5" style={{ color: colors.bg }}>{c.title}</h3>
-                    <p className="text-sm" style={{ color: '#A8B2C2' }}>{c.desc}</p>
+                    <p className="mt-1.5 sm:mt-0 text-sm" style={{ color: '#A8B2C2' }}>{c.desc}</p>
                   </div>
                 ))}
               </div>
@@ -594,10 +598,12 @@ export default function SummervibeTechLanding() {
                 className="p-7 rounded-2xl transition-all hover:-translate-y-1 hover:shadow-lg"
                 style={{ backgroundColor: colors.surface, border: `1px solid ${colors.border}` }}
               >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ backgroundColor: colors.accentSoft + '60' }}>
-                  <Icon name={p.icon} className="w-6 h-6" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center" style={{ backgroundColor: colors.accentSoft + '60' }}>
+                    <Icon name={p.icon} className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold" style={{ color: colors.ink }}>{p.title}</h3>
                 </div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: colors.ink }}>{p.title}</h3>
                 <p className="text-sm" style={{ color: colors.inkSoft }}>{p.desc}</p>
               </div>
             ))}
@@ -833,7 +839,7 @@ export default function SummervibeTechLanding() {
       {/* ============ FINAL CTA ============ */}
       <section id="contact" className="px-5 md:px-8 pb-20 pt-8">
         <div className="max-w-7xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden p-10 md:p-14 lg:p-16" style={{ backgroundColor: colors.ink }}>
+          <div className="relative rounded-3xl overflow-hidden p-6 md:p-14 lg:p-16" style={{ backgroundColor: colors.ink }}>
             <div
               className="absolute -top-32 -right-32 w-96 h-96 rounded-full opacity-25 pointer-events-none"
               style={{ background: `radial-gradient(circle, ${colors.accent} 0%, transparent 70%)` }}
@@ -843,7 +849,7 @@ export default function SummervibeTechLanding() {
               style={{ background: `radial-gradient(circle, ${colors.accentSoft} 0%, transparent 70%)` }}
             />
 
-            <div className="relative grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               {/* Left — copy */}
               <div>
                 <div
@@ -885,7 +891,7 @@ export default function SummervibeTechLanding() {
               </div>
 
               {/* Right — form */}
-              <div className="rounded-2xl p-7 md:p-8" style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)' }}>
+              <div className="rounded-2xl p-5 md:p-8" style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)' }}>
                 {formSent ? (
                   <div className="flex flex-col items-center justify-center text-center py-12 gap-4">
                     <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: colors.accent }}>
@@ -1045,15 +1051,12 @@ export default function SummervibeTechLanding() {
             </div>
 
             <div className="md:col-span-4">
+              <a href="#contact" className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.ink }}>Book a free consultation</a>
+              <p className="text-xs mt-1 mb-6" style={{ color: colors.inkMuted }}>Now booking — anytime & into next year</p>
               <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>Get In Touch</h4>
               <ul className="space-y-2.5 text-sm" style={{ color: colors.inkSoft }}>
                 <li><a href="mailto:contact@summervibe.tech">contact@summervibe.tech</a></li>
-                <li><a href="#contact">Book a free consultation</a></li>
-                <li className="pt-2">
-                  <span className="text-xs" style={{ color: colors.inkMuted }}>
-                    Now booking — anytime & into next year
-                  </span>
-                </li>
+                <li><a href="mailto:support@summervibe.tech">support@summervibe.tech</a></li>
               </ul>
             </div>
           </div>
