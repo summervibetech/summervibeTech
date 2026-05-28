@@ -498,6 +498,16 @@ export default function SummervibeTechLanding() {
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke={colors.accentSoft} strokeWidth="1.8"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke={colors.accentSoft} strokeWidth="1.8" strokeLinecap="round"/></svg>,
   ];
 
+  const serviceImages = {
+    web: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=75&auto=format&fit=crop',
+    restaurant: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=75&auto=format&fit=crop',
+    mobile: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=75&auto=format&fit=crop',
+    dashboard: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75&auto=format&fit=crop',
+    portfolio: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=75&auto=format&fit=crop',
+    enhance: 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&q=75&auto=format&fit=crop',
+    realestate: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=75&auto=format&fit=crop',
+  };
+
   return (
     <div
       style={{
@@ -603,18 +613,30 @@ export default function SummervibeTechLanding() {
       </nav>
 
       {/* ============ HERO ============ */}
-      <section className="relative pt-32 md:pt-40 pb-8 md:pb-12 px-5 md:px-8 overflow-hidden">
+      <section
+        className="relative pt-32 md:pt-40 pb-8 md:pb-12 px-5 md:px-8 overflow-hidden"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80&auto=format&fit=crop)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         <div
-          className="absolute inset-0 -z-10"
+          className="absolute inset-0"
+          style={{ background: `rgba(250,250,247,0.60)` }}
+        />
+        <div
+          className="absolute inset-0"
           style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, ${colors.accentSoft}55 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 60%, ${colors.accent}08 0%, transparent 60%)` }}
         />
+
         <div className="max-w-5xl mx-auto relative text-center">
           <div
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-8 anim-fade-up"
             style={{ backgroundColor: colors.surface, border: `1px solid ${colors.border}` }}
           >
             <span className="w-1.5 h-1.5 rounded-full anim-pulse-soft" style={{ backgroundColor: colors.accent }} />
-            <span className="text-xs font-semibold tracking-wide" style={{ color: colors.accent }}>{t.heroBadge}</span>
+            <span className="text-sm font-semibold tracking-wide" style={{ color: colors.accent }}>{t.heroBadge}</span>
           </div>
 
           <h1
@@ -690,16 +712,27 @@ export default function SummervibeTechLanding() {
             {t.services.map((s) => (
               <div
                 key={s.title}
-                className="group p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
                 style={{ backgroundColor: colors.surface, border: `1px solid ${colors.border}` }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center" style={{ backgroundColor: colors.accentSoft + '60' }}>
-                    <Icon name={s.icon} className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-bold" style={{ color: colors.ink }}>{s.title}</h3>
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={serviceImages[s.icon]}
+                    alt={s.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.15) 100%)' }} />
                 </div>
-                <p className="text-sm" style={{ color: colors.inkSoft }}>{s.desc}</p>
+                <div className="p-7">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 flex-shrink-0 rounded-xl flex items-center justify-center" style={{ backgroundColor: colors.accentSoft + '60' }}>
+                      <Icon name={s.icon} className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-lg font-bold" style={{ color: colors.ink }}>{s.title}</h3>
+                  </div>
+                  <p className="text-sm" style={{ color: colors.inkSoft }}>{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -777,8 +810,18 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ WHO WE HELP ============ */}
-      <section id="who" className="py-20 md:py-16 px-5 md:px-8" style={{ backgroundColor: colors.surfaceAlt }}>
-        <div className="max-w-7xl mx-auto">
+      <section
+        id="who"
+        className="relative py-20 md:py-16 px-5 md:px-8 overflow-hidden"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1756412003461-9ec706e302a1?w=1600&q=80&auto=format&fit=crop)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(250, 250, 247, 0.72)' }} />
+        <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, ${colors.accentSoft}40 0%, transparent 60%)` }} />
+        <div className="max-w-7xl mx-auto relative">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-2 mb-4">
               <div className="w-6 h-px" style={{ backgroundColor: colors.accent }} />
@@ -858,8 +901,17 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ WHY ============ */}
-      <section className="py-20 md:py-16 px-5 md:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section
+        className="relative py-20 md:py-16 px-5 md:px-8 overflow-hidden"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1600&q=80&auto=format&fit=crop)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(250, 250, 247, 0.72)' }} />
+        <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, ${colors.accentSoft}40 0%, transparent 60%)` }} />
+        <div className="max-w-7xl mx-auto relative">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
               <div className="flex items-center gap-2 mb-4">
@@ -1144,7 +1196,7 @@ export default function SummervibeTechLanding() {
               </div>
               <div className="md:col-span-4">
                 <a href="#contact" className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.ink }}>{t.footerConsult}</a>
-                <p className="text-xs mt-1 mb-6" style={{ color: colors.inkMuted }}>{t.footerBookingNote}</p>
+                <p className="text-sm mt-1 mb-6" style={{ color: colors.inkMuted }}>{t.footerBookingNote}</p>
                 <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>{t.footerContact}</h4>
                 <ul className="space-y-2.5 text-sm" style={{ color: colors.inkSoft }}>
                   <li><a href="mailto:contact@summervibe.tech">contact@summervibe.tech</a></li>
