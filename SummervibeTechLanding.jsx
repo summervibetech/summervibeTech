@@ -18,11 +18,12 @@ const translations = {
     heroCta1: 'Start a Project',
     heroCta2: 'Explore Services',
     featureTitles: [
-      { title: 'AI Agents, Built In', desc: '24/7 customer support, booking, and lead capture — trained on your business and live in days.' },
       { title: 'Every Screen, Every Device', desc: 'Designed for phones, tablets, and desktops equally — fast-loading, pixel-perfect, and built to perform everywhere.' },
       { title: 'No Long Contracts', desc: 'Project-based, transparent pricing. Hire us for what you need — no retainers, no lock-in.' },
       { title: 'Fast Turnaround', desc: 'From first conversation to live product in weeks — clear milestones, honest timelines, no surprises.' },
       { title: 'Design That Converts', desc: 'Every pixel serves a purpose — clean, modern, and built to turn visitors into customers.' },
+      { title: 'AI Agents, Built In', desc: '24/7 customer support, booking, and lead capture — trained on your business and live in days.' },
+      { title: 'Focus on What Matters Most', desc: "You may have the expertise to build it yourself, but not always the time to execute it. We handle the process so you can focus on your most important work." },
     ],
     servicesLabel: 'What We Build',
     servicesH2: 'Services shaped to how you actually work.',
@@ -107,7 +108,7 @@ const translations = {
     ],
     contactBadge: 'Free Consultation',
     contactH2: "Tell us what you're building.",
-    contactP: "Drop a message below — describe your idea, what you need help with, or what you'd like to improve. We'll get back to you within one business day.",
+    contactP: "Drop a message below — describe your idea, what you need help with, or what you'd like to improve. We'll get back to you ASAP.",
     contactItems: [
       'No commitment — just a conversation',
       'Custom scope built around your budget',
@@ -164,11 +165,12 @@ const translations = {
     heroCta1: 'Iniciar Proyecto',
     heroCta2: 'Ver Servicios',
     featureTitles: [
-      { title: 'Agentes de AI Integrados', desc: 'Soporte al cliente 24/7, reservas y captación de leads — entrenados para tu negocio y activos en días.' },
       { title: 'Cada Pantalla, Cada Dispositivo', desc: 'Diseñado para teléfonos, tabletas y escritorios por igual — rápido, perfecto al píxel y listo para rendir en cualquier lugar.' },
       { title: 'Sin Contratos Largos', desc: 'Precios por proyecto, sin sorpresas. Contrátanos para lo que necesitas — sin retención ni dependencias.' },
       { title: 'Entrega Rápida', desc: 'De la primera conversación al producto en vivo en semanas — hitos claros, plazos honestos, sin sorpresas.' },
       { title: 'Diseño Que Convierte', desc: 'Cada píxel tiene un propósito — limpio, moderno y diseñado para convertir visitantes en clientes.' },
+      { title: 'Agentes de AI Integrados', desc: 'Soporte al cliente 24/7, reservas y captación de leads — entrenados para tu negocio y activos en días.' },
+      { title: 'Enfócate en Lo Que Más Importa', desc: 'Quizás tienes el conocimiento para hacerlo tú mismo, pero no siempre el tiempo. Nosotros nos encargamos del proceso para que puedas enfocarte en tu trabajo más importante.' },
     ],
     servicesLabel: 'Lo Que Construimos',
     servicesH2: 'Servicios adaptados a cómo trabajas realmente.',
@@ -481,6 +483,10 @@ export default function SummervibeTechLanding() {
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
       <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke={colors.accent} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>,
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="9" stroke={colors.accent} strokeWidth="1.8"/>
+      <path d="M12 7v5l3 3" stroke={colors.accent} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>,
   ];
 
   const oneTeamIcons = [
@@ -597,7 +603,7 @@ export default function SummervibeTechLanding() {
       </nav>
 
       {/* ============ HERO ============ */}
-      <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 px-5 md:px-8 overflow-hidden">
+      <section className="relative pt-32 md:pt-40 pb-8 md:pb-12 px-5 md:px-8 overflow-hidden">
         <div
           className="absolute inset-0 -z-10"
           style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, ${colors.accentSoft}55 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 60%, ${colors.accent}08 0%, transparent 60%)` }}
@@ -647,18 +653,20 @@ export default function SummervibeTechLanding() {
             </a>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-5xl mx-auto anim-fade-up" style={{ animationDelay: '0.55s' }}>
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto anim-fade-up" style={{ animationDelay: '0.55s' }}>
             {t.featureTitles.map((f, i) => (
               <div
                 key={f.title}
-                className="flex flex-col items-center text-center p-6 rounded-2xl"
+                className="flex flex-col p-6 rounded-2xl"
                 style={{ backgroundColor: colors.surface, border: `1px solid ${colors.border}` }}
               >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ backgroundColor: colors.accentSoft + '50' }}>
-                  {featureIcons[i]}
+                <div className="flex items-center justify-center gap-3 mb-3 sm:flex-col sm:items-center sm:gap-0">
+                  <div className="w-10 h-10 flex-shrink-0 rounded-xl flex items-center justify-center sm:mb-3" style={{ backgroundColor: colors.accentSoft + '50' }}>
+                    {featureIcons[i]}
+                  </div>
+                  <div className="text-sm font-bold sm:mb-1 sm:text-center" style={{ color: colors.ink }}>{f.title}</div>
                 </div>
-                <div className="text-sm font-bold mb-1" style={{ color: colors.ink }}>{f.title}</div>
-                <div className="text-xs leading-relaxed" style={{ color: colors.inkSoft }}>{f.desc}</div>
+                <div className="text-xs leading-relaxed text-center" style={{ color: colors.inkSoft }}>{f.desc}</div>
               </div>
             ))}
           </div>
@@ -666,7 +674,7 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ SERVICES ============ */}
-      <section id="services" className="relative py-20 md:py-28 px-5 md:px-8">
+      <section id="services" className="relative pt-10 pb-20 md:pt-10 md:pb-16 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
             <div>
@@ -699,7 +707,7 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ AI AGENTS ============ */}
-      <section id="ai-agents" className="relative py-20 md:py-28 px-5 md:px-8">
+      <section id="ai-agents" className="relative py-20 md:py-16 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div
             className="rounded-3xl overflow-hidden p-8 md:p-14 lg:p-16 relative"
@@ -769,7 +777,7 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ WHO WE HELP ============ */}
-      <section id="who" className="py-20 md:py-28 px-5 md:px-8" style={{ backgroundColor: colors.surfaceAlt }}>
+      <section id="who" className="py-20 md:py-16 px-5 md:px-8" style={{ backgroundColor: colors.surfaceAlt }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-2 mb-4">
@@ -800,7 +808,7 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ ONE TEAM ============ */}
-      <section className="py-20 md:py-28 px-5 md:px-8">
+      <section className="py-20 md:py-16 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div
             className="rounded-3xl overflow-hidden relative"
@@ -850,7 +858,7 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ WHY ============ */}
-      <section className="py-20 md:py-28 px-5 md:px-8">
+      <section className="py-20 md:py-16 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
@@ -885,7 +893,7 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ PACKAGES ============ */}
-      <section id="packages" className="py-20 md:py-28 px-5 md:px-8" style={{ backgroundColor: colors.surfaceAlt }}>
+      <section id="packages" className="py-20 md:py-16 px-5 md:px-8" style={{ backgroundColor: colors.surfaceAlt }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-2 mb-4">
@@ -934,7 +942,7 @@ export default function SummervibeTechLanding() {
       </section>
 
       {/* ============ PROCESS ============ */}
-      <section id="process" className="py-20 md:py-28 px-5 md:px-8">
+      <section id="process" className="py-20 md:py-16 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-4">
@@ -948,13 +956,15 @@ export default function SummervibeTechLanding() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4 relative">
               {t.process.map((p) => (
                 <div key={p.step} className="text-center">
-                  <div
-                    className="w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-5 relative z-10"
-                    style={{ backgroundColor: colors.surface, border: `2px solid ${colors.accent}` }}
-                  >
-                    <span className="text-sm font-bold" style={{ color: colors.accent }}>{p.step}</span>
+                  <div className="flex items-center justify-center gap-3 mb-3 sm:flex-col sm:gap-0">
+                    <div
+                      className="w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center sm:mb-5 relative z-10"
+                      style={{ backgroundColor: colors.surface, border: `2px solid ${colors.accent}` }}
+                    >
+                      <span className="text-sm font-bold" style={{ color: colors.accent }}>{p.step}</span>
+                    </div>
+                    <h3 className="text-lg font-bold sm:mb-2" style={{ color: colors.ink }}>{p.title}</h3>
                   </div>
-                  <h3 className="text-lg font-bold mb-2" style={{ color: colors.ink }}>{p.title}</h3>
                   <p className="text-sm" style={{ color: colors.inkSoft }}>{p.desc}</p>
                 </div>
               ))}
@@ -1121,24 +1131,26 @@ export default function SummervibeTechLanding() {
               </div>
               <p className="text-sm max-w-sm" style={{ color: colors.inkSoft }}>{t.footerTagline}</p>
             </div>
-            <div className="md:col-span-3">
-              <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>{t.footerExplore}</h4>
-              <ul className="space-y-2.5 text-sm">
-                {t.navLinks.map((l) => (
-                  <li key={l.href}>
-                    <a href={l.href} style={{ color: colors.inkSoft }}>{l.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="md:col-span-4">
-              <a href="#contact" className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.ink }}>{t.footerConsult}</a>
-              <p className="text-xs mt-1 mb-6" style={{ color: colors.inkMuted }}>{t.footerBookingNote}</p>
-              <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>{t.footerContact}</h4>
-              <ul className="space-y-2.5 text-sm" style={{ color: colors.inkSoft }}>
-                <li><a href="mailto:contact@summervibe.tech">contact@summervibe.tech</a></li>
-                <li><a href="mailto:support@summervibe.tech">support@summervibe.tech</a></li>
-              </ul>
+            <div className="grid grid-cols-2 gap-8 md:contents">
+              <div className="md:col-span-3">
+                <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>{t.footerExplore}</h4>
+                <ul className="space-y-2.5 text-sm">
+                  {t.navLinks.map((l) => (
+                    <li key={l.href}>
+                      <a href={l.href} style={{ color: colors.inkSoft }}>{l.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="md:col-span-4">
+                <a href="#contact" className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.ink }}>{t.footerConsult}</a>
+                <p className="text-xs mt-1 mb-6" style={{ color: colors.inkMuted }}>{t.footerBookingNote}</p>
+                <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>{t.footerContact}</h4>
+                <ul className="space-y-2.5 text-sm" style={{ color: colors.inkSoft }}>
+                  <li><a href="mailto:contact@summervibe.tech">contact@summervibe.tech</a></li>
+                  <li><a href="mailto:support@summervibe.tech">support@summervibe.tech</a></li>
+                </ul>
+              </div>
             </div>
           </div>
           <div className="pt-6 border-t flex flex-col gap-1 items-center text-center" style={{ borderColor: colors.border }}>
