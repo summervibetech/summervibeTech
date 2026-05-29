@@ -1060,7 +1060,7 @@ export default function SummervibeTechLanding() {
                 </div>
               </div>
 
-              <div className="rounded-2xl p-5 md:p-8" style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)' }}>
+              <div className="rounded-2xl p-5 md:p-8 overflow-hidden min-w-0" style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)' }}>
                 {formSent ? (
                   <div className="flex flex-col items-center justify-center text-center py-12 gap-4">
                     <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ backgroundColor: colors.accent }}>
@@ -1198,8 +1198,8 @@ export default function SummervibeTechLanding() {
                 <p className="text-sm mt-1 mb-6" style={{ color: colors.inkMuted }}>{t.footerBookingNote}</p>
                 <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>{t.footerContact}</h4>
                 <ul className="space-y-2.5 text-sm" style={{ color: colors.inkSoft }}>
-                  <li><a href="mailto:contact@summervibe.tech">contact@summervibe.tech</a></li>
-                  <li><a href="mailto:support@summervibe.tech">support@summervibe.tech</a></li>
+                  <li><a href="mailto:contact@summervibe.tech" className="break-all">contact@summervibe.tech</a></li>
+                  <li><a href="mailto:support@summervibe.tech" className="break-all">support@summervibe.tech</a></li>
                 </ul>
               </div>
             </div>
