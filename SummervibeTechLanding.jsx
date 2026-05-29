@@ -573,15 +573,18 @@ export default function SummervibeTechLanding() {
             <LangToggle />
           </div>
 
-          <button className="md:hidden p-2" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Toggle menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              {mobileMenu ? (
-                <path d="M6 6l12 12M6 18L18 6" stroke={colors.ink} strokeWidth="2" strokeLinecap="round"/>
-              ) : (
-                <path d="M4 7h16M4 12h16M4 17h16" stroke={colors.ink} strokeWidth="2" strokeLinecap="round"/>
-              )}
-            </svg>
-          </button>
+          <div className="md:hidden flex items-center gap-1">
+            <LangToggle />
+            <button className="p-2" onClick={() => setMobileMenu(!mobileMenu)} aria-label="Toggle menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                {mobileMenu ? (
+                  <path d="M6 6l12 12M6 18L18 6" stroke={colors.ink} strokeWidth="2" strokeLinecap="round"/>
+                ) : (
+                  <path d="M4 7h16M4 12h16M4 17h16" stroke={colors.ink} strokeWidth="2" strokeLinecap="round"/>
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {mobileMenu && (
@@ -590,10 +593,6 @@ export default function SummervibeTechLanding() {
             style={{ backgroundColor: colors.surface, border: `1px solid ${colors.border}` }}
           >
             <div className="flex flex-col gap-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-semibold tracking-wide" style={{ color: colors.inkMuted }}>Language</span>
-                <LangToggle />
-              </div>
               {t.navLinks.map((l) => (
                 <a key={l.href} href={l.href} onClick={() => setMobileMenu(false)} className="text-base font-medium" style={{ color: colors.ink }}>
                   {l.label}
@@ -1057,7 +1056,7 @@ export default function SummervibeTechLanding() {
                 </ul>
                 <div className="mt-10 pt-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.12)' }}>
                   <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: '#A8B2C2' }}>{t.contactDirectLabel}</p>
-                  <a href="mailto:contact@summervibe.tech" className="text-sm font-medium" style={{ color: colors.accentSoft }}>contact@summervibe.tech</a>
+                  <a href="mailto:contact@summervibe.tech" className="text-sm font-medium break-all" style={{ color: colors.accentSoft }}>contact@summervibe.tech</a>
                 </div>
               </div>
 
@@ -1141,7 +1140,7 @@ export default function SummervibeTechLanding() {
                         placeholder={t.formMessagePlaceholder}
                         value={formData.message}
                         onChange={handleFormChange}
-                        className="rounded-lg px-4 py-3 text-sm outline-none transition-all resize-none"
+                        className="w-full rounded-lg px-4 py-3 text-sm outline-none transition-all resize-none"
                         style={{ backgroundColor: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: colors.bg }}
                         onFocus={(e) => (e.target.style.border = `1px solid ${colors.accent}`)}
                         onBlur={(e) => (e.target.style.border = '1px solid rgba(255,255,255,0.15)')}
