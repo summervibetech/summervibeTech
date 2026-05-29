@@ -1090,7 +1090,7 @@ export default function SummervibeTechLanding() {
                           placeholder={t.formNamePlaceholder}
                           value={formData.name}
                           onChange={handleFormChange}
-                          className="rounded-lg px-4 py-3 text-sm outline-none transition-all"
+                          className="w-full rounded-lg px-4 py-3 text-sm outline-none transition-all"
                           style={{ backgroundColor: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: colors.bg }}
                           onFocus={(e) => (e.target.style.border = `1px solid ${colors.accent}`)}
                           onBlur={(e) => (e.target.style.border = '1px solid rgba(255,255,255,0.15)')}
@@ -1105,7 +1105,7 @@ export default function SummervibeTechLanding() {
                           placeholder={t.formEmailPlaceholder}
                           value={formData.email}
                           onChange={handleFormChange}
-                          className="rounded-lg px-4 py-3 text-sm outline-none transition-all"
+                          className="w-full rounded-lg px-4 py-3 text-sm outline-none transition-all"
                           style={{ backgroundColor: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: colors.bg }}
                           onFocus={(e) => (e.target.style.border = `1px solid ${colors.accent}`)}
                           onBlur={(e) => (e.target.style.border = '1px solid rgba(255,255,255,0.15)')}
@@ -1119,7 +1119,7 @@ export default function SummervibeTechLanding() {
                         name="service"
                         value={formData.service}
                         onChange={handleFormChange}
-                        className="rounded-lg px-4 py-3 text-sm outline-none transition-all appearance-none"
+                        className="w-full rounded-lg px-4 py-3 text-sm outline-none transition-all appearance-none"
                         style={{ backgroundColor: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', color: formData.service ? colors.bg : '#7A8599' }}
                         onFocus={(e) => (e.target.style.border = `1px solid ${colors.accent}`)}
                         onBlur={(e) => (e.target.style.border = '1px solid rgba(255,255,255,0.15)')}
@@ -1182,7 +1182,7 @@ export default function SummervibeTechLanding() {
               </div>
               <p className="text-sm max-w-sm" style={{ color: colors.inkSoft }}>{t.footerTagline}</p>
             </div>
-            <div className="grid grid-cols-2 gap-8 md:contents">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:contents">
               <div className="md:col-span-3">
                 <h4 className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: colors.ink }}>{t.footerExplore}</h4>
                 <ul className="space-y-2.5 text-sm">
